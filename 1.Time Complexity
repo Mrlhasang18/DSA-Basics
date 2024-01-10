@@ -1,0 +1,16 @@
+There can be multiple approaches to solving the same problem. For every approach (algorithm) the time taken, amount of space used, and computational power might 
+be different. Therefore there has to be a way by which we can distinguish these different approaches (algorithms) and choose the one which is the most efficient.
+
+So for these purpose to choose the best algorithm based on the time taken by an algorithm to execute , Time complexity was introduced.
+
+So what is time complexity?
+->By definition, Time complexity is the time taken by an algorithm/program to run as a function of the length of the input.
+
+Why is it so important?
+
+1.It can clearly distinguish between two different algorithms based on their efficiency.
+2.It’s independent of the machine on which the algorithm is run.
+3.We can get a direct correlation with the length of the input.
+
+It’s important to note here that time complexity doesn’t really measure the actual time taken by an algorithm to run ( Since that kind of depends on the programming
+language, processing power etc.). It calculates the execution time of an algorithm in terms of the algorithms and the inputs.
