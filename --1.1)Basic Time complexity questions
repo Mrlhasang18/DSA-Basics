@@ -35,3 +35,20 @@ or
 Because first loop is nested with same input its N^2 and for another loop its O(N). Hence, Highest order is considered,
 Therefore, T(n) = O(N*N).
 No extra space related to input is occupied, hence it space complexity is O(1)
+
+3.What is the time complexity of the following code :
+
+    int a = 0;
+    for (i = 0; i < N; i++) {
+        for (j = N; j > i; j--) {
+            a = a + i + j;
+        }
+    }
+
+
+
+soln:
+
+look its showing i=0 to n so this will cost u n
+and again a inner loop is executing from n to 1 i.e --because j>i
+therefore time complexity will be n*n O(n2)
