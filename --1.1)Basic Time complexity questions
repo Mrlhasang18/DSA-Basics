@@ -52,3 +52,12 @@ soln:
 look its showing i=0 to n so this will cost u n
 and again a inner loop is executing from n to 1 i.e --because j>i
 therefore time complexity will be n*n O(n2)
+
+Q.What does it mean when we say that an algorithm X is asymptotically more efficient than Y?
+ans.
+When we say that algorithm X is asymptotically more efficient than algorithm Y, we are making a statement about the 
+growth rates of the two algorithms' running times or resource requirements as the input size becomes arbitrarily large. This is often expressed using big-O notation.
+
+In formal terms, if algorithm X is asymptotically more efficient than algorithm Y, it means that for sufficiently 
+large input sizes, the time complexity (or space complexity) of algorithm X is upper-bounded by a function that grows
+more slowly than the function bounding the time complexity of algorithm Y.
