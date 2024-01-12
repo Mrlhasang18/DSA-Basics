@@ -42,3 +42,37 @@ One way to understand is that to reach the last square from the first square we 
 times. Making for a total steps of (R+C-2). So the deepest level in the tree is (R+C-2). Total number of calls can be 
 calculated as shown in the solution. Remember 1 + 2 + 4 + … + N < 2*N. Here N is 2 ^ (R+C-2). So the sum is less 
 than 2 * 2 ^ (R+C-2) = 2 ^ (R+C-1) < 2 ^ (R+C). As it is upper bounded we can write it as O(2 ^ (R+C)).
+
+
+3)What is the worst case time complexity of the following code:
+
+int memo[101][101];
+int findMinPath(vector<vector<int> >& V, int r, int c) {
+  int R = V.size();
+  int C = V[0].size();
+  if (r >= R || c >= C) return 100000000; // Infinity
+  if (r == R - 1 && c == C - 1) return 0;
+  if (memo[r][c] != -1) return memo[r][c];
+  memo[r][c] =  V[r][c] + min(findMinPath(V, r + 1, c), findMinPath(V, r, c + 1));
+  return memo[r][c];
+}
+
+Callsite : 
+memset(memo, -1, sizeof(memo));
+findMinPath(V, 0, 0);
+Assume R = V.size() and C = V[0].size() and V has positive elements
+
+
+soln:
+
+-->The given code is an implementation of finding the minimum path sum in a 2D grid (represented by the vector of vectors V). The code uses memoization to avoid redundant calculations.
+
+Let's analyze the time complexity:
+
+The function findMinPath is called for each cell in the 2D grid, and the result is memoized in the memo array.
+In the worst case, each cell in the grid may be computed and memoized only once.
+The memoization ensures that if the function is called with the same arguments (r, c) more than once, the result is 
+directly retrieved from the memo array without recomputing.
+
+Therefore, the worst-case time complexity is O(R * C), where R is the number of rows in the grid (V.size()) and C is
+the number of columns in the grid (V[0].size()).
