@@ -1,0 +1,26 @@
+What is the worst case time complexity of the following code :
+
+/* 
+ * V is sorted 
+ * V.size() = N
+ * The function is initially called as searchNumOccurrence(V, k, 0, N-1)
+ */
+int searchNumOccurrence(vector<int> &V, int k, int start, int end) {
+    if (start > end) return 0;
+    int mid = (start + end) / 2;
+    if (V[mid] < k) return searchNumOccurrence(V, k, mid + 1, end);
+    if (V[mid] > k) return searchNumOccurrence(V, k, start, mid - 1);
+    return searchNumOccurrence(V, k, start, mid - 1) + 1 + searchNumOccurrence(V, k, mid + 1, end);
+}
+
+
+
+
+
+soln:
+It is because of last return statement as in this we are including recursive call of both ‘if’ condition mentioned above i.e. it looks like binary 
+search but here in the last return statement it looks for both left and right side Hence traverse complete array which result in overall time complexity O(n).
+
+it’s simple in worst case the function will be called twice so the recurrence equation would be
+f(n)=2(f(n/2))+1
+… and by solving this recurrence relation by Master’s theorem we get time complexity as O(n).
