@@ -22,3 +22,28 @@ Q1)What is the time complexity of the following code :
         -> log2(N) < x
 
         so, at last when x=log2(N) , that will be the last iteration of the loop.
+
+Q2)What is time complexity of following code :
+
+        int count = 0;
+        for (int i = N; i > 0; i /= 2) {
+            for (int j = 0; j < i; j++) {
+                count += 1;
+            }
+        }
+
+
+soln:
+
+
+for 1st iteration loop will iterate n times…
+
+for 2nd iteration loop will iterate n/2 times…
+for 3rd iteration loop will iterate n/4 times…
+for 4th iteration loop will iterate n/8 times… and so on…
+so here O(f(n)) = n + n/2 + n/4 + n/8 + n/16 + …
+=> O(f(n)) = n + 1/2( n + n/2 + n/4 + n/8 + n/16 + …)
+=> O(f(n)) = n + 1/2O(f(n))
+=> 1/2O(f(n)) = n
+=> O(f(n)) = 2n
+therefore time complexity will be O(n)
