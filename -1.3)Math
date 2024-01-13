@@ -47,3 +47,23 @@ so here O(f(n)) = n + n/2 + n/4 + n/8 + n/16 + …
 => 1/2O(f(n)) = n
 => O(f(n)) = 2n
 therefore time complexity will be O(n)
+
+
+Q3)What is the time complexity of the following code :
+
+int i, j, k = 0;
+for (i = n/2; i <= n; i++) {
+    for (j = 2; j <= n; j = j * 2) {
+         k = k + n/2;
+    }
+}
+
+soln:
+
+lets start from inner loop:
+starting fron 2 and ending by N; every time multipling by 2. so it would be 2, 4, 8, 16, ... N; that is 2^x = N resulting in x = log2(N)
+
+now outer loop:
+starting from N/2 to N every step increment by 1 means : N-N/2 resulting in N/2 steps.
+
+So N/2 * log2(N); becomes O(Nlog2N)
