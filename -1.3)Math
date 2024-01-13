@@ -67,3 +67,61 @@ now outer loop:
 starting from N/2 to N every step increment by 1 means : N-N/2 resulting in N/2 steps.
 
 So N/2 * log2(N); becomes O(Nlog2N)
+
+Q)In the following C++ function, let n >= m.
+
+
+int gcd(int n, int m) {
+  if (n%m ==0) return m;
+  if (n < m) swap(n, m);
+  while (m > 0) {
+    n = n%m;
+    swap(n, m);
+  }
+  return n;
+}
+What is the time complexity of the above function assuming n > m?. 
+
+
+
+
+soln:
+
+Here , if we think carefully when we divide a Greater number ‘a’ by another Smaller number ‘b’ , the largest Remainder is (b - 1).
+
+Example :
+
+if a = 15 , b=8 , then r = (a % b) = 7
+
+Now (a/2) = (15/2) = 7
+
+so r = (a/2)
+
+Now if we have any Other Number like a = 14 or a =13 or …less than that …
+
+Then r = (14 % 8) = 6 is less than (14 / 2) = 7.
+or (13 % 8) = 5 is less than (13 / 2) = 6.
+
+Thus r is at most r = a / 2 or r < (a / 2).
+
+Thus , at every step value of the greater number is reduced to (Half) or (Less Than half).
+Now Worst Case Complexity Is When r = ( a / 2 ) in every Iteration .
+
+This Is similar To a Loop Where for(i=n ; i >0 ; i/=2).
+
+So Worst Time Complexity is O(log N) .
+
+=> THE WORST CASE HAPPENS WHEN :
+
+The 2 numbers are Fibonacci numbers.
+And the remainder when we divide a Fibonacci number by another is another Fibonacci number.
+
+EG : 8 AND 13.
+
+(13 % 8) = 5 which is the previous fibonacci number of 8.
+
+Same way : (8 % 5) = 3 , (5 % 3) = 2 , (3 % 2) = 1 , (2 % 1) = 0.
+
+And log(N) = log8(base 2) = 3
+No of steps = 4 = log(N) + 1
+Remove Constants We Get Worst Complexity = log(N)
