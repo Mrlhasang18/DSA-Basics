@@ -1,0 +1,24 @@
+Q1)What is the time complexity of the following code :
+
+        int a = 0, i = N;
+        while (i > 0) {
+            a += i;
+            i /= 2;
+        }
+
+        soln:
+
+        Time complexety: Big O(N)
+
+        Explanation:
+
+        for every iteration i, becomes i/2
+        more explicitly, if i=N then i becomes  N/2,N/4,N/6,... or in general , N/(2^x) for x iterations
+
+        thus , when i<=0 or i<1 ,the loop terminates then,  N/(2^x) <  1
+        -> N< (2^x)
+        ->  log(N) < xlog(2)
+        -> (log(N)/log(2))< x
+        -> log2(N) < x
+
+        so, at last when x=log2(N) , that will be the last iteration of the loop.
