@@ -21,3 +21,21 @@ C it takes 3 times
 D it takes infinte time
 
 so Option C is answer
+
+
+Q)Which of the following is not bounded by O(n^2)?
+1.(15^10) * n + 12099
+2.n^1.98
+3.n^3 / (sqrt(n))         //Correct !
+4.(2^20) * n
+
+soln:
+they simply want to ask which one has more complexity than O(n^2)
+
+(15^10) * n + 12099 = const *n +const =const *n => O(n)
+2)n^1.98, here 1.98<2 , i.e. (n^2) > (n^1.98)
+
+n^3 / (sqrt(n))
+4)(2^20) * n = const * n => O(n)
+
+
