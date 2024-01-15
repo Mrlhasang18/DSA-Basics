@@ -39,3 +39,23 @@ n^3 / (sqrt(n))
 4)(2^20) * n = const * n => O(n)
 
 
+Q)Which of the given options provides the increasing order of complexity of functions f1, f2, f3 and f4:
+
+f1(n) = 2^n
+
+f2(n) = n^(3/2)
+
+f3(n) = nLogn
+
+f4(n) = n^(Logn)
+
+ANS: F3,F2,F4,F1
+
+Explanation:
+f1(n) = 2^n 
+Here complexity is worst as it's exponentially increasing the time complexity
+
+f2(n) = n^(3/2)
+Its complexity is second-best because it's like n^1.5
+
+f3(n) = nLogn it is the best complexity as compare to others because no power
